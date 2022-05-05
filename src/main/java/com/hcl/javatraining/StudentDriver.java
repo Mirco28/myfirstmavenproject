@@ -61,7 +61,7 @@ public class StudentDriver {
 
 	static boolean lookUpStudentById(Scanner scanner) {
 		System.out.println("Enter Student ID");
-		int studentId = scanner.nextInt();
+		int studentId = scanner.nextInt(); 
 
 		for (Student s : studentSet) {
 			if (s.getStudentID() == studentId) {
