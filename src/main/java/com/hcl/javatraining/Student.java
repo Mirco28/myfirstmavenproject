@@ -1,6 +1,8 @@
 package com.hcl.javatraining;
 
-public class Student implements Comparable<Student>{
+
+
+public class Student{
 	private int studentID;
 	private String name;
 	private int age;
@@ -13,12 +15,6 @@ public class Student implements Comparable<Student>{
 	public int getStudentID() {
 		return studentID;
 	}
-
-
-	public void setStudentID(int studentID) {
-		this.studentID = studentID;
-	}
-
 
 	public String getName() {
 		return name;
@@ -39,20 +35,23 @@ public class Student implements Comparable<Student>{
 		this.age = age;
 	}
 	
+	
+	
+	@Override
+	public int hashCode() {
+		return this.studentID;
+	}
+	@Override
+	public boolean equals(Object obj) {
+	
+		Student s = (Student) obj;
+		
+		return s.studentID == studentID;
+	}
 	@Override
 	public String toString() {
 		return "studentID =" + studentID + ", name =" + name + ", age =" + age + "";
 	}
-
-	@Override
-	public int compareTo(Student o) {
-		// TODO Auto-generated method stub
-	
-		return name.compareTo(o.name);
-	}
-	
-	
-	
 	
 }
 
